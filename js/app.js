@@ -9,7 +9,6 @@ var locations = [];
 // Callback for Foursquare call success
 var venueSearchSuccess = function (data) {
 
-    console.log(data);
     // Parse response, store venues
     var venues = data.response.venues;
     for (i = 0; i < venues.length; i++) {
