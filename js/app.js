@@ -5,10 +5,6 @@ var map;
 var service;
 var locations = [];
 
-// Applies bindings and initializes View Model
-var initMVVM = function () {
-    ko.applyBindings(new ViewModel(locations));
-};
 
 // Callback for Foursquare call success
 var venueSearchSuccess = function (data) {
@@ -31,8 +27,8 @@ var venueSearchSuccess = function (data) {
         });
     }
 
-    // initialize MVVM
-    initMVVM();
+    // Apply KO bindings, initialize MVVM
+    ko.applyBindings(new ViewModel(locations));
 };
 
 // Callback for Foursquare call error
@@ -40,8 +36,8 @@ var venueSearchError = function (error) {
     console.log('error');
     console.log(error.statusCode());
 
-    // initialize MVVM
-    initMVVM();
+    // Apply KO bindings, initialize MVVM
+    ko.applyBindings(new ViewModel(locations));
 };
 
 // Callback for Google Maps initialization
