@@ -33,11 +33,7 @@ var venueSearchSuccess = function (data) {
 
 // Callback for Foursquare call error
 var venueSearchError = function (error) {
-    console.log('error');
-    console.log(error.statusCode());
-
-    // Apply KO bindings, initialize MVVM
-    ko.applyBindings(new ViewModel(locations));
+    alert("No locations could be retrieved!");
 };
 
 // Callback for Google Maps initialization
