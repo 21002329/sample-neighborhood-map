@@ -5,7 +5,6 @@ var map;
 var service;
 var locations = [];
 
-
 // Callback for Foursquare call success
 var venueSearchSuccess = function (data) {
 
@@ -33,6 +32,11 @@ var venueSearchSuccess = function (data) {
 // Callback for Foursquare call error
 var venueSearchError = function (error) {
     alert("No locations could be retrieved!");
+};
+
+// Error callback for Google Maps API
+function loadMapError() {
+    alert("Google Maps not available!");
 };
 
 // Callback for Google Maps initialization

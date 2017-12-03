@@ -63,16 +63,10 @@
                 $('#sidebar').toggleClass('active');
             });
         });
-        // Error handler in case of Google Maps API call fail
-        setTimeout(function () {
-            if (!window.google || !window.google.maps) {
-                alert("Google Maps not available!");
-            }
-        }, 3000);
     </script>
 
     <!-- Google Maps API call - asynchronous Map load -->
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCpT9SfQchBKcD1RZ9EcJHgD7dUCYrQ0MU&callback=initMap">
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCpT9SfQchBKcD1RZ9EcJHgD7dUCYrQ0MU&callback=initMap" onerror="loadMapError()">
     </script>
 </body>
 
